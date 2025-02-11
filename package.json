@@ -1,0 +1,41 @@
+{
+  "name": "mgraph.fromdot",
+  "version": "1.0.0",
+  "description": "Load DOT files into mgraph.fromdot",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "tap --allow-incomplete-coverage test/*.js",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "graph",
+    "dot",
+    "graphviz",
+    "serialization",
+    "mgraph"
+  ],
+  "author": "Michael Feldman",
+  "contributors": [
+    {
+      "name": "Andrei Kashcha",
+      "url": "https://github.com/anvaka",
+      "note": "Original author of ngraph.fromdot"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfeldman143/mgraph.fromdot"
+  },
+  "devDependencies": {
+    "tap": "^21.0.2",
+    "rollup": "^4.34.6",
+    "@rollup/plugin-terser": "^0.4.0"
+  },
+  "dependencies": {
+    "dotparser": "^1.1.1",
+    "mgraph.graph": "^1.0.0"
+  },
+  "type": "module"
+}
