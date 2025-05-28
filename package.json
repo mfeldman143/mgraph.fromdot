@@ -1,19 +1,34 @@
 {
   "name": "mgraph.fromdot",
   "version": "1.0.0",
-  "description": "Load DOT files into mgraph.fromdot",
+  "description": "Load DOT files into mgraph.graph",
   "main": "index.js",
-  "module": "index.js",
+  "module": "dist/mgraph.fromdot.esm.js",
+  "unpkg": "dist/mgraph.fromdot.umd.min.js",
+  "jsdelivr": "dist/mgraph.fromdot.umd.min.js",
+  "types": "./index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "tap --allow-incomplete-coverage test/*.js",
-    "build": "rollup -c"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run test:run && npm run build"
   },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
   "keywords": [
     "graph",
     "dot",
     "graphviz",
     "serialization",
-    "mgraph"
+    "mgraph",
+    "fromdot"
   ],
   "author": "Michael Feldman",
   "contributors": [
@@ -26,16 +41,25 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mfeldman143/mgraph.fromdot"
+    "url": "git+https://github.com/mfeldman143/mgraph.fromdot.git"
   },
-  "devDependencies": {
-    "tap": "^21.0.2",
-    "rollup": "^4.34.6",
-    "@rollup/plugin-terser": "^0.4.0"
+  "bugs": {
+    "url": "https://github.com/mfeldman143/mgraph.fromdot/issues"
   },
+  "homepage": "https://github.com/mfeldman143/mgraph.fromdot#readme",
   "dependencies": {
     "dotparser": "^1.1.1",
     "mgraph.graph": "^1.0.0"
   },
-  "type": "module"
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@vitest/ui": "^3.1.4",
+    "rollup": "^4.41.1",
+    "vitest": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
